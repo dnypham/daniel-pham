@@ -64,22 +64,57 @@ i {
   padding-top: 40px;
 }
 
-/* ----------PSEUDO CLASSES---------- */
+/* ----------HOME---------- */
 
-.navigation-container > i:hover,
-h1:hover {
+.home {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0;
+}
+
+.home > img {
+  height: 225px;
+  width: 225px;
+}
+
+.home > h1 {
+  text-align: center;
+  font-size: 22px;
+  padding-top: 10px;
+  color: white;
+}
+
+.home span {
   color: #a9cec2;
 }
 
-.navigation-list > li:hover {
+/* ----------PSEUDO CLASSES---------- */
+
+.navigation-container > i:hover,
+.navigation-container > h1:hover {
+  color: #a9cec2;
+}
+
+.navigation-list > li:hover,
+.navigation-list-modal > li:hover {
   color: #a9cec2;
 }
 
 /* ----------MEDIA QUERIES---------- */
 
-/* @media only screen and (min-width: 576px) {
+@media only screen and (min-width: 576px) {
+  .home > h1 {
+    font-size: 30px;
+  }
 
-} */
+  .home > img {
+    height: 300px;
+    width: 300px;
+  }
+}
 
 @media only screen and (min-width: 768px) {
   .navigation-container > i {
@@ -93,11 +128,25 @@ h1:hover {
   .navigation-list {
     display: flex;
   }
+
+  .home > img {
+    height: 325px;
+    width: 325px;
+  }
 }
 
 @media only screen and (min-width: 992px) {
   .navigation-list > li {
     font-size: 16px;
+  }
+
+  .home > h1 {
+    font-size: 32px;
+  }
+
+  .home > img {
+    height: 350px;
+    width: 350px;
   }
 }
 
