@@ -1,0 +1,22 @@
+.nunito-900 {
+  font-family: Nunito, sans-serif;
+  font-weight: 900;
+}
+
+.nunito-800 {
+  font-family: Nunito, sans-serif;
+  font-weight: 800;
+}
+
+.varela-round {
+  font-family: "Varela Round", sans-serif;
+  font-weight: 400;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
