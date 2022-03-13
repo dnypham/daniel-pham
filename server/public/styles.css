@@ -1,0 +1,76 @@
+body {
+  background-color: #171717;
+}
+
+/* ----------NAVIGATION---------- */
+
+.navigation-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 30px;
+}
+
+.navigation-container > h1,
+i {
+  color: white;
+  font-size: 20px;
+}
+
+.navigation-container > h1 {
+  cursor: default;
+}
+
+.navigation-container > i {
+  cursor: pointer;
+}
+
+.navigation-list {
+  display: none;
+  color: white;
+  list-style: none;
+}
+
+.navigation-list > li {
+  cursor: pointer;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+/* ----------PSEUDO CLASSES---------- */
+
+.navigation-container > i:hover,
+h1:hover {
+  color: #a9cec2;
+}
+
+.navigation-list > li:hover {
+  color: #a9cec2;
+}
+
+/* ----------MEDIA QUERIES---------- */
+
+/* @media only screen and (min-width: 576px) {
+
+} */
+
+@media only screen and (min-width: 768px) {
+  .navigation-container > i {
+    display: none;
+  }
+
+  .navigation-list {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .navigation-list > li {
+    font-size: 16px;
+  }
+}
+
+/* @media only screen and (min-width: 1200px) {
+
+} */
