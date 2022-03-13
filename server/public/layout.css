@@ -12,3 +12,11 @@
   font-family: Varela-Round, sans-serif;
   font-weight: 400;
 }
+
+.space-between {
+  justify-content: space-between;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
