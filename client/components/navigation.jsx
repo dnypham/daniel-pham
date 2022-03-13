@@ -16,26 +16,18 @@ export default class Navigation extends React.Component {
     this.setState({ isNavigationOpen: false });
   }
 
-  renderNavigationModal() {
-    if (this.state.isNavigationOpen) {
-      return (
-        <NavigationModal closeNavigationModal={this.closeNavigationModal}/>
-      );
-    }
-  }
-
   render() {
     return (
       <div className='navigation-container space-between'>
-        {this.renderNavigationModal()}
+        <NavigationModal closeNavigationModal={this.closeNavigationModal} isNavigationOpen={this.state.isNavigationOpen}/>
         <h1 className='nunito-900'>DP</h1>
         <i className="fa-solid fa-bars fa-lg" onClick={() => this.setState({ isNavigationOpen: true })}></i>
         <ul className='navigation-list nunito-900'>
-          <li>HOME</li>
-          <li>ABOUT</li>
-          <li>SKILLS + TOOLS</li>
-          <li>PROJECTS</li>
-          <li>CONTACT</li>
+          <li><a>HOME</a></li>
+          <li><a>ABOUT</a></li>
+          <li><a>SKILLS + TOOLS</a></li>
+          <li><a>PROJECTS</a></li>
+          <li><a>CONTACT</a></li>
         </ul>
       </div>
     );
