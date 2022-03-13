@@ -4,6 +4,7 @@ export default class About extends React.Component {
   render() {
     return (
       <div className='about-container'>
+        <h2 className='nunito-900'>ABOUT</h2>
         <div className='about-text-container varela-round'>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
