@@ -151,6 +151,7 @@ i {
 
 .skills-container > h2 {
   color: white;
+  font-size: 20px;
 }
 
 .skill-container {
@@ -200,7 +201,8 @@ i {
     width: 300px;
   }
 
-  .about-container > h2 {
+  .about-container > h2,
+  .skills-container > h2 {
     font-size: 22px;
   }
 
@@ -262,8 +264,8 @@ i {
     font-size: 20px;
   }
 
-  .about-container > h2 {
-    color: white;
+  .about-container > h2,
+  .skills-container > h2 {
     font-size: 24px;
   }
 
@@ -277,8 +279,8 @@ i {
 }
 
 @media only screen and (min-width: 1200px) {
-  .about-container > h2 {
-    color: white;
+  .about-container > h2,
+  .skills-container > h2 {
     font-size: 26px;
   }
 }
