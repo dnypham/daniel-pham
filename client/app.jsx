@@ -2,6 +2,7 @@ import React from 'react';
 import Navigation from './components/navigation';
 import Home from './components/home';
 import About from './components/about';
+import Skills from './components/skills';
 
 export default class App extends React.Component {
   render() {
@@ -10,6 +11,7 @@ export default class App extends React.Component {
         <Navigation />
         <Home />
         <About />
+        <Skills />
       </>
     );
   }
