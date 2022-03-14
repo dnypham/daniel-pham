@@ -20,3 +20,15 @@
 .flex-end {
   justify-content: flex-end;
 }
+
+.row {
+  display: flex;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.white {
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(234deg) brightness(103%) contrast(103%);
+}

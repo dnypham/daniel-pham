@@ -139,6 +139,42 @@ i {
   cursor: pointer;
 }
 
+/* ----------SKILLS---------- */
+
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 50px;
+}
+
+.skills-container > h2 {
+  color: white;
+  font-size: 20px;
+}
+
+.skill-container {
+  flex-basis: calc(100% / 3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  transform: scale(1);
+  transition-duration: 0.5s;
+}
+
+.skill-container > img {
+  width: 40%;
+  height: 40%;
+}
+
+.skill-container > h3 {
+  color: white;
+  font-size: 14px;
+}
+
 /* ----------PSEUDO CLASSES---------- */
 
 .navigation-container > i:hover,
@@ -155,6 +191,10 @@ i {
   filter: brightness(105%);
 }
 
+.skill-container:hover {
+  transform: scale(1.2);
+}
+
 /* ----------MEDIA QUERIES---------- */
 
 @media only screen and (min-width: 576px) {
@@ -167,9 +207,21 @@ i {
     width: 300px;
   }
 
-  .about-container > h2 {
-    color: white;
+  .about-container > h2,
+  .skills-container > h2 {
     font-size: 22px;
+  }
+
+  .skills-container {
+    padding: 100px;
+  }
+
+  .skill-container > h3 {
+    font-size: 18px;
+  }
+
+  .skill-container:hover {
+    transform: scale(1.5);
   }
 }
 
@@ -194,6 +246,14 @@ i {
   .about-text-container {
     font-size: 18px;
   }
+
+  .skill-container {
+    flex-basis: calc(100% / 4);
+  }
+
+  .skills-container {
+    padding: 100px 150px;
+  }
 }
 
 @media only screen and (min-width: 992px) {
@@ -214,15 +274,23 @@ i {
     font-size: 20px;
   }
 
-  .about-container > h2 {
-    color: white;
+  .about-container > h2,
+  .skills-container > h2 {
     font-size: 24px;
+  }
+
+  .skills-container {
+    padding: 100px 200px;
+  }
+
+  .skill-container > h3 {
+    font-size: 20px;
   }
 }
 
 @media only screen and (min-width: 1200px) {
-  .about-container > h2 {
-    color: white;
+  .about-container > h2,
+  .skills-container > h2 {
     font-size: 26px;
   }
 }
