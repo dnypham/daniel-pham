@@ -147,8 +147,6 @@ i {
   justify-content: center;
   align-items: center;
   padding: 100px 50px;
-
-  /* border: 1px solid red; */
 }
 
 .skills-container > h2 {
@@ -162,8 +160,6 @@ i {
   justify-content: center;
   align-items: center;
   padding: 20px 0;
-
-  /* border: 1px solid red; */
 }
 
 .skill-container > img {
