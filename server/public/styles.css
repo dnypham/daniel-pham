@@ -161,6 +161,8 @@ i {
   justify-content: center;
   align-items: center;
   padding: 20px 0;
+  transform: scale(1);
+  transition-duration: 0.5s;
 }
 
 .skill-container > img {
@@ -189,6 +191,10 @@ i {
   filter: brightness(105%);
 }
 
+.skill-container:hover {
+  transform: scale(1.2);
+}
+
 /* ----------MEDIA QUERIES---------- */
 
 @media only screen and (min-width: 576px) {
@@ -212,6 +218,10 @@ i {
 
   .skill-container > h3 {
     font-size: 18px;
+  }
+
+  .skill-container:hover {
+    transform: scale(1.5);
   }
 }
 
