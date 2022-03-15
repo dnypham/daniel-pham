@@ -249,7 +249,7 @@ i {
   padding-top: 10px;
 }
 
-.button-container > button {
+.button-container > a {
   cursor: pointer;
   border: none;
   background-color: #a9cec2;
@@ -259,6 +259,10 @@ i {
   font-size: 12px;
   width: 290px;
   height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
 }
 
 /* ----------PSEUDO CLASSES---------- */
@@ -273,7 +277,7 @@ i {
   color: #a9cec2;
 }
 
-button:hover {
+.button-container > a:hover {
   filter: brightness(105%);
 }
 
@@ -324,7 +328,7 @@ button:hover {
     font-size: 14px;
   }
 
-  .button-container > button {
+  .button-container > a {
     font-size: 12px;
     width: 290px;
     height: 25px;
@@ -377,7 +381,7 @@ button:hover {
     font-size: 14px;
   }
 
-  .button-container > button {
+  .button-container > a {
     font-size: 14px;
     width: 290px;
     height: 30px;
@@ -436,7 +440,7 @@ button:hover {
     font-size: 18px;
   }
 
-  .button-container > button {
+  .button-container > a {
     font-size: 16px;
     width: 300px;
     height: 30px;
