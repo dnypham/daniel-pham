@@ -4,6 +4,7 @@ import Home from './components/home';
 import About from './components/about';
 import Skills from './components/skills';
 import Tools from './components/tools';
+import Projects from './components/projects';
 
 export default class App extends React.Component {
   render() {
@@ -14,6 +15,7 @@ export default class App extends React.Component {
         <About />
         <Skills />
         <Tools />
+        <Projects />
       </>
     );
   }
