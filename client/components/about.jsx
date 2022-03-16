@@ -3,7 +3,7 @@ import React from 'react';
 export default class About extends React.Component {
   render() {
     return (
-      <div id='about' className='about-container'>
+      <div id='about' className='about-container' ref={this.props.sectionRef}>
         <h2 className='nunito-900'>ABOUT</h2>
         <div className='about-text-container varela-round'>
           <p>

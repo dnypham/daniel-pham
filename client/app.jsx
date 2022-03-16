@@ -6,20 +6,66 @@ import Skills from './components/skills';
 import Tools from './components/tools';
 import Projects from './components/projects';
 import Contact from './components/contact';
-import Footer from './components/footer';
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isActive: ''
+    };
+
+    this.home = React.createRef();
+    this.about = React.createRef();
+    this.skills = React.createRef();
+    this.tools = React.createRef();
+    this.projects = React.createRef();
+    this.contact = React.createRef();
+
+    this.sections = [
+      this.home,
+      this.about,
+      this.skills,
+      this.tools,
+      this.projects,
+      this.contact
+    ];
+
+    const options = {
+      root: null,
+      threshold: 0.45,
+      rootMargin: '0px'
+    };
+
+    this.observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        console.log(entry, entry.isIntersecting);
+
+        if (entry.isIntersecting) {
+          this.setState({
+            isActive: entry.target.id
+          });
+        }
+      });
+    }, options);
+  }
+
+  componentDidMount() {
+    this.sections.forEach(section => {
+      this.observer.observe(section.current);
+    });
+  }
+
   render() {
     return (
       <>
-        <Navigation />
-        <Home />
-        <About />
-        <Skills />
-        <Tools />
-        <Projects />
-        <Contact />
-        <Footer />
+        <Navigation isActive={this.state.isActive} />
+        <Home sectionRef={this.home} isActive={this.state.isActive} />
+        <About sectionRef={this.about} isActive={this.state.isActive} />
+        <Skills sectionRef={this.skills} isActive={this.state.isActive} />
+        <Tools sectionRef={this.tools} isActive={this.state.isActive} />
+        <Projects sectionRef={this.projects} isActive={this.state.isActive} />
+        <Contact sectionRef={this.contact} isActive={this.state.isActive} />
       </>
     );
   }

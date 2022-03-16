@@ -1,9 +1,16 @@
 import React from 'react';
 
 export default class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      active: false
+    };
+  }
+
   render() {
     return (
-      <div id='home' className='home'>
+      <div id='home' className='home' ref={this.props.sectionRef}>
         <img src='images/profile-photo.png' alt='Photo'></img>
         <h1 className='varela-round'>
           Hello, I&apos;m <span>Daniel Pham</span> <br />
