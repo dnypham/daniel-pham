@@ -23,11 +23,11 @@ export default class Navigation extends React.Component {
         <h1 className='nunito-900'>DP</h1>
         <i className="fa-solid fa-bars fa-lg" onClick={() => this.setState({ isNavigationOpen: true })}></i>
         <ul className='navigation-list nunito-900'>
-          <li><a>HOME</a></li>
-          <li><a>ABOUT</a></li>
-          <li><a>SKILLS + TOOLS</a></li>
-          <li><a>PROJECTS</a></li>
-          <li><a>CONTACT</a></li>
+          <li><a href='#home'>HOME</a></li>
+          <li><a href='#about'>ABOUT</a></li>
+          <li><a href='#skills'>SKILLS + TOOLS</a></li>
+          <li><a href='#projects'>PROJECTS</a></li>
+          <li><a href='#contact'>CONTACT</a></li>
         </ul>
       </div>
     );

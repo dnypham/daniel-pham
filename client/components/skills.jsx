@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Skills(props) {
   return (
-    <div className='skills-container'>
+    <div id='skills' className='skills-container'>
       <h2 className='nunito-900'>SKILLS</h2>
       <div className='row wrap'>
         <div className='skill-container'>

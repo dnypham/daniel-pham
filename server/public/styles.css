@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   position: relative;
   background-color: #171717;
@@ -30,7 +34,6 @@ i {
 
 .navigation-list {
   display: none;
-  color: white;
   padding: 0;
   list-style: none;
 }
@@ -38,6 +41,11 @@ i {
 .navigation-list > li {
   padding: 0 10px;
   font-size: 14px;
+}
+
+.navigation-list a {
+  text-decoration: none;
+  color: white;
 }
 
 .navigation-modal {
@@ -59,7 +67,6 @@ i {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
   padding: 0;
   list-style: none;
 }
@@ -67,6 +74,11 @@ i {
 .navigation-list-modal > li {
   padding-top: 40px;
   font-size: 24px;
+}
+
+.navigation-list-modal a {
+  text-decoration: none;
+  color: white;
 }
 
 .navigation-list-modal a,
@@ -193,7 +205,7 @@ i {
 }
 
 .project-container {
-  padding: 50px 0;
+  padding: 20px 0;
 }
 
 .project {

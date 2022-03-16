@@ -4,7 +4,7 @@ export default function Contact(props) {
 
   return (
     <form action='https://getform.io/f/6a889d2f-f3fb-4129-b952-d3cdb8ea6de9' method='POST'>
-      <div className='contact-container'>
+      <div id="contact" className='contact-container'>
         <div className='contact'>
           <input
             required

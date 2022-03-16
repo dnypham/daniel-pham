@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Projects(props) {
   return (
-    <div className='projects-container'>
+    <div id='projects' className='projects-container'>
       <h2 className='nunito-900'>PROJECTS</h2>
       <div className='project-container'>
         <div className='project'>

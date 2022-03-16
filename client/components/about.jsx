@@ -3,7 +3,7 @@ import React from 'react';
 export default class About extends React.Component {
   render() {
     return (
-      <div className='about-container'>
+      <div id='about' className='about-container'>
         <h2 className='nunito-900'>ABOUT</h2>
         <div className='about-text-container varela-round'>
           <p>
