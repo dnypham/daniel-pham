@@ -319,6 +319,31 @@ i {
   font-size: 14px;
 }
 
+/* ----------FOOTER---------- */
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.icon-container {
+  height: 80px;
+  width: 80px;
+  background-color: #383838;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon-container > img {
+  width: 40%;
+  height: 40%;
+}
+
 /* ----------PSEUDO CLASSES---------- */
 
 .navigation-container > i:hover,
@@ -334,6 +359,10 @@ i {
 .button-container > a:hover,
 .submit-container > button:hover {
   filter: brightness(105%);
+}
+
+.icon-container:hover {
+  filter: brightness(110%);
 }
 
 .skill-container:hover {
