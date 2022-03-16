@@ -265,6 +265,59 @@ i {
   text-decoration: none;
 }
 
+/* ----------CONTACT---------- */
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact > input,
+.contact > textarea,
+.contact > div {
+  width: 300px;
+  margin: 1px;
+}
+
+.contact > input,
+.contact > textarea {
+  padding: 0 10px;
+}
+
+.contact > input {
+  height: 30px;
+}
+
+.contact > textarea {
+  height: 150px;
+  padding-top: 5px;
+}
+
+.submit-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submit-container > button {
+  width: 80px;
+  height: 30px;
+  cursor: pointer;
+  border: none;
+  background-color: #a9cec2;
+  color: white;
+  font-size: 14px;
+}
+
 /* ----------PSEUDO CLASSES---------- */
 
 .navigation-container > i:hover,
@@ -277,7 +330,8 @@ i {
   color: #a9cec2;
 }
 
-.button-container > a:hover {
+.button-container > a:hover,
+.submit-container > button:hover {
   filter: brightness(105%);
 }
 
@@ -315,7 +369,10 @@ i {
     transform: scale(1.5);
   }
 
-  .project {
+  .project,
+  .contact > input,
+  .contact > textarea,
+  .contact > div {
     width: 350px;
   }
 
@@ -369,7 +426,10 @@ i {
     padding: 100px 150px;
   }
 
-  .project {
+  .project,
+  .contact > input,
+  .contact > textarea,
+  .contact > div {
     width: 400px;
   }
 
@@ -385,6 +445,12 @@ i {
     font-size: 14px;
     width: 290px;
     height: 30px;
+  }
+
+  .submit-container > button {
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
   }
 }
 
@@ -427,7 +493,10 @@ i {
     font-size: 26px;
   }
 
-  .project {
+  .project,
+  .contact > input,
+  .contact > textarea,
+  .contact > div {
     width: 500px;
   }
 
@@ -448,5 +517,16 @@ i {
 
   .image-container {
     height: 350px;
+  }
+
+  .submit-container > button {
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .contact > textarea {
+    height: 200px;
+    padding-top: 5px;
   }
 }
