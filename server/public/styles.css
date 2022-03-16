@@ -116,7 +116,7 @@ i {
 }
 
 .about-text-container {
-  width: 70%;
+  width: 300px;
   background-color: white;
   border-radius: 10px;
   padding: 10px 25px;
@@ -407,7 +407,8 @@ i {
   .project,
   .contact > input,
   .contact > textarea,
-  .contact > div {
+  .contact > div,
+  .about-text-container {
     width: 350px;
   }
 
@@ -464,7 +465,8 @@ i {
   .project,
   .contact > input,
   .contact > textarea,
-  .contact > div {
+  .contact > div,
+  .about-text-container {
     width: 400px;
   }
 
@@ -541,7 +543,8 @@ i {
   .project,
   .contact > input,
   .contact > textarea,
-  .contact > div {
+  .contact > div,
+  .about-text-container {
     width: 500px;
   }
 
