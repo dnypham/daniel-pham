@@ -124,11 +124,13 @@ i {
 }
 
 .about-button-container {
-  text-align: center;
-  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.about-button-container > button {
+.about-button-container > a {
+  text-decoration: none;
   background-color: #a9cec2;
   color: white;
   border: none;
