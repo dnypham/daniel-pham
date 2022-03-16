@@ -301,6 +301,7 @@ i {
 .contact > textarea {
   height: 150px;
   padding-top: 5px;
+  resize: none;
 }
 
 .submit-container {
