@@ -25,7 +25,7 @@ export default class About extends React.Component {
             mollit anim id est laborum.
           </p>
           <div className='about-button-container'>
-            <button className='nunito-800'>RESUME</button>
+            <a href='https://drive.google.com/file/d/1QWSQ65Qzn4Rjqv1AOek894Ow4oI2ekm9/view?usp=sharing' target='_blank' rel='noreferrer' className='icon-container'>RESUME</a>
           </div>
         </div>
       </div>

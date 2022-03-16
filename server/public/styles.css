@@ -116,7 +116,7 @@ i {
 }
 
 .about-text-container {
-  width: 70%;
+  width: 300px;
   background-color: white;
   border-radius: 10px;
   padding: 10px 25px;
@@ -124,11 +124,13 @@ i {
 }
 
 .about-button-container {
-  text-align: center;
-  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.about-button-container > button {
+.about-button-container > a {
+  text-decoration: none;
   background-color: #a9cec2;
   color: white;
   border: none;
@@ -217,13 +219,13 @@ i {
 
 .project > h4 {
   text-align: center;
-  font-size: 12px;
+  font-size: 14px;
   margin: 0;
   padding: 10px;
 }
 
 .project > p {
-  font-size: 10px;
+  font-size: 12px;
   margin: 0;
   padding: 0 20px;
   padding-bottom: 20px;
@@ -319,6 +321,31 @@ i {
   font-size: 14px;
 }
 
+/* ----------FOOTER---------- */
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.icon-container {
+  height: 60px;
+  width: 60px;
+  background-color: #383838;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon-container > img {
+  width: 40%;
+  height: 40%;
+}
+
 /* ----------PSEUDO CLASSES---------- */
 
 .navigation-container > i:hover,
@@ -334,6 +361,10 @@ i {
 .button-container > a:hover,
 .submit-container > button:hover {
   filter: brightness(105%);
+}
+
+.icon-container:hover {
+  filter: brightness(110%);
 }
 
 .skill-container:hover {
@@ -378,7 +409,8 @@ i {
   .project,
   .contact > input,
   .contact > textarea,
-  .contact > div {
+  .contact > div,
+  .about-text-container {
     width: 350px;
   }
 
@@ -435,7 +467,8 @@ i {
   .project,
   .contact > input,
   .contact > textarea,
-  .contact > div {
+  .contact > div,
+  .about-text-container {
     width: 400px;
   }
 
@@ -457,6 +490,11 @@ i {
     width: 100px;
     height: 40px;
     font-size: 16px;
+  }
+
+  .icon-container {
+    height: 70px;
+    width: 70px;
   }
 }
 
@@ -490,6 +528,11 @@ i {
   .skill-container > h3 {
     font-size: 20px;
   }
+
+  .icon-container {
+    height: 80px;
+    width: 80px;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -502,7 +545,8 @@ i {
   .project,
   .contact > input,
   .contact > textarea,
-  .contact > div {
+  .contact > div,
+  .about-text-container {
     width: 500px;
   }
 
