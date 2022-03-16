@@ -339,6 +339,11 @@ i {
   transform: scale(1.2);
 }
 
+.contact > input:focus,
+.contact > textarea:focus {
+  outline: none;
+}
+
 /* ----------MEDIA QUERIES---------- */
 
 @media only screen and (min-width: 576px) {
