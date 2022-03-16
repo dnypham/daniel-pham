@@ -12,7 +12,7 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
-      isActive: ''
+      isActive: null
     };
 
     this.home = React.createRef();
