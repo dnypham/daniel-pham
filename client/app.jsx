@@ -33,13 +33,13 @@ export default class App extends React.Component {
 
     const options = {
       root: null,
-      threshold: 0.45,
+      threshold: 0.80,
       rootMargin: '0px'
     };
 
     this.observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
-        console.log(entry, entry.isIntersecting);
+        console.log(entry.target, entry.isIntersecting);
 
         if (entry.isIntersecting) {
           this.setState({
