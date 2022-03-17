@@ -34,7 +34,7 @@ export default class Navigation extends React.Component {
           <li><a className={this.props.isActive === 'about' ? 'active' : 'inactive'} href='#about'>ABOUT</a></li>
           <li><a className={this.props.isActive === 'skills' ? 'active' : 'inactive'} href='#skills'>SKILLS</a></li>
           <li><a className={this.props.isActive === 'tools' ? 'active' : 'inactive'} href='#tools'>TOOLS</a></li>
-          <li><a className={this.props.isActive === 'projects' ? 'active' : 'inactive'} href='#projects'>PROJECTS</a></li>
+          <li><a className={this.props.isActive === 'projects' || this.props.isActive === 'event' || this.props.isActive === 'brew' ? 'active' : 'inactive'} href='#projects'>PROJECTS</a></li>
           <li><a className={this.props.isActive === 'contact' ? 'active' : 'inactive'} href='#contact'>CONTACT</a></li>
         </ul>
       </div>
