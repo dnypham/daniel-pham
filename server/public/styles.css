@@ -192,19 +192,24 @@ i {
 
 .projects-container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 30px 0;
+  padding: 20px 80px;
   padding-top: 100px;
 }
 
 .projects-container > h2 {
+  text-align: center;
+  flex-basis: 100%;
   color: white;
   font-size: 20px;
 }
 
 .project-container {
+  display: flex;
+  justify-content: center;
+  flex-basis: 100%;
   padding: 20px 0;
 }
 
@@ -542,7 +547,7 @@ i {
   }
 
   .skills-container {
-    padding: 120px 200px;
+    padding: 100px 200px;
   }
 
   .skill-container > h3 {
@@ -552,6 +557,10 @@ i {
   .icon-container {
     height: 80px;
     width: 80px;
+  }
+
+  .project-container {
+    flex-basis: 50%;
   }
 }
 
@@ -568,16 +577,16 @@ i {
   .contact > textarea,
   .contact > div,
   .about-text-container {
-    width: 500px;
+    width: 450px;
   }
 
   .project > h4 {
-    font-size: 20px;
+    font-size: 18px;
     padding-top: 25px;
   }
 
   .project > p {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .button-container > a {
@@ -587,7 +596,7 @@ i {
   }
 
   .image-container {
-    height: 350px;
+    height: 300px;
   }
 
   .submit-container > button {
