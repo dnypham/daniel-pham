@@ -32,3 +32,23 @@
 .white {
   filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(234deg) brightness(103%) contrast(103%);
 }
+
+.fixed {
+  position: fixed;
+}
+
+.active {
+  color: #a9cec2;
+}
+
+.inactive {
+  color: white;
+}
+
+.test {
+  background-color: lightcoral;
+}
+
+.no-scroll {
+  overflow: hidden;
+}

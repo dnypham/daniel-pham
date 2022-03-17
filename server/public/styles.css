@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   position: relative;
   background-color: #171717;
@@ -6,6 +10,7 @@ body {
 /* ----------NAVIGATION---------- */
 
 .navigation-container {
+  z-index: 1000;
   display: flex;
   align-items: center;
   height: 80px;
@@ -30,7 +35,6 @@ i {
 
 .navigation-list {
   display: none;
-  color: white;
   padding: 0;
   list-style: none;
 }
@@ -38,6 +42,10 @@ i {
 .navigation-list > li {
   padding: 0 10px;
   font-size: 14px;
+}
+
+.navigation-list a {
+  text-decoration: none;
 }
 
 .navigation-modal {
@@ -59,7 +67,6 @@ i {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
   padding: 0;
   list-style: none;
 }
@@ -67,6 +74,10 @@ i {
 .navigation-list-modal > li {
   padding-top: 40px;
   font-size: 24px;
+}
+
+.navigation-list-modal a {
+  text-decoration: none;
 }
 
 .navigation-list-modal a,
@@ -81,7 +92,7 @@ i {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 100px 0;
+  padding: 150px 0;
 }
 
 .home > img {
@@ -181,19 +192,25 @@ i {
 
 .projects-container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 30px 0;
+  padding: 20px 80px;
+  padding-top: 100px;
 }
 
 .projects-container > h2 {
+  text-align: center;
+  flex-basis: 100%;
   color: white;
   font-size: 20px;
 }
 
 .project-container {
-  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  flex-basis: 100%;
+  padding: 20px 0;
 }
 
 .project {
@@ -274,7 +291,12 @@ i {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding-top: 100px;
+}
+
+.contact-container > h2 {
+  color: white;
+  font-size: 20px;
 }
 
 .contact {
@@ -390,7 +412,8 @@ i {
 
   .about-container > h2,
   .skills-container > h2,
-  .projects-container > h2 {
+  .projects-container > h2,
+  .contact-container > h2 {
     font-size: 22px;
   }
 
@@ -517,7 +540,9 @@ i {
   }
 
   .about-container > h2,
-  .skills-container > h2 {
+  .skills-container > h2,
+  .projects-container > h2,
+  .contact-container > h2 {
     font-size: 24px;
   }
 
@@ -533,12 +558,17 @@ i {
     height: 80px;
     width: 80px;
   }
+
+  .project-container {
+    flex-basis: 50%;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
   .about-container > h2,
   .skills-container > h2,
-  .projects-container > h2 {
+  .projects-container > h2,
+  .contact-container > h2 {
     font-size: 26px;
   }
 
@@ -547,16 +577,16 @@ i {
   .contact > textarea,
   .contact > div,
   .about-text-container {
-    width: 500px;
+    width: 450px;
   }
 
   .project > h4 {
-    font-size: 20px;
+    font-size: 18px;
     padding-top: 25px;
   }
 
   .project > p {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .button-container > a {
@@ -566,7 +596,7 @@ i {
   }
 
   .image-container {
-    height: 350px;
+    height: 300px;
   }
 
   .submit-container > button {
