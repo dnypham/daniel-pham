@@ -131,7 +131,7 @@ i {
   background-color: white;
   border-radius: 10px;
   padding: 10px 25px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .about-button-container {
@@ -432,9 +432,12 @@ i {
   .project,
   .contact > input,
   .contact > textarea,
-  .contact > div,
-  .about-text-container {
+  .contact > div {
     width: 350px;
+  }
+
+  .about-text-container {
+    width: 450px;
   }
 
   .project > h4 {
@@ -477,6 +480,7 @@ i {
 
   .about-text-container {
     font-size: 18px;
+    width: 500px;
   }
 
   .skill-container {
@@ -490,8 +494,7 @@ i {
   .project,
   .contact > input,
   .contact > textarea,
-  .contact > div,
-  .about-text-container {
+  .contact > div {
     width: 400px;
   }
 
@@ -537,6 +540,7 @@ i {
 
   .about-text-container {
     font-size: 20px;
+    width: 600px;
   }
 
   .about-container > h2,
@@ -575,8 +579,7 @@ i {
   .project,
   .contact > input,
   .contact > textarea,
-  .contact > div,
-  .about-text-container {
+  .contact > div {
     width: 450px;
   }
 

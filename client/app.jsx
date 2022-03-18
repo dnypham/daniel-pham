@@ -17,6 +17,9 @@ export default class App extends React.Component {
 
     this.home = React.createRef();
     this.about = React.createRef();
+    this.textOne = React.createRef();
+    this.textTwo = React.createRef();
+    this.textThree = React.createRef();
     this.skills = React.createRef();
     this.tools = React.createRef();
     this.projects = React.createRef();
@@ -30,9 +33,19 @@ export default class App extends React.Component {
       brew: this.brew
     };
 
+    this.aboutObj = {
+      about: this.about,
+      textOne: this.textOne,
+      textTwo: this.textTwo,
+      textThree: this.textThree
+    };
+
     this.sections = [
       this.home,
       this.about,
+      this.textOne,
+      this.textTwo,
+      this.textThree,
       this.skills,
       this.tools,
       this.projects,
@@ -71,7 +84,7 @@ export default class App extends React.Component {
       <>
         <Navigation isActive={this.state.isActive} />
         <Home sectionRef={this.home} isActive={this.state.isActive} />
-        <About sectionRef={this.about} isActive={this.state.isActive} />
+        <About sectionRef={this.aboutObj} isActive={this.state.isActive} />
         <Skills sectionRef={this.skills} isActive={this.state.isActive} />
         <Tools sectionRef={this.tools} isActive={this.state.isActive} />
         <Projects sectionRef={this.projectsObj} isActive={this.state.isActive} />

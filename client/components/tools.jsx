@@ -27,16 +27,16 @@ export default class Tools extends React.Component {
             <h3 className='nunito-900'>Webpack</h3>
           </div>
           <div className='skill-container'>
+            <img src='images/git.svg'></img>
+            <h3 className='nunito-900'>Git</h3>
+          </div>
+          <div className='skill-container'>
             <img src='images/figma.svg'></img>
             <h3 className='nunito-900'>Figma</h3>
           </div>
           <div className='skill-container'>
             <img src='images/slack.svg'></img>
             <h3 className='nunito-900'>Slack</h3>
-          </div>
-          <div className='skill-container'>
-            <img src='images/canva.svg'></img>
-            <h3 className='nunito-900'>Canva</h3>
           </div>
         </div>
       </div>
