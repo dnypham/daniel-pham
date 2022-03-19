@@ -6,22 +6,24 @@ export default class About extends React.Component {
       <div id='about' className='about-container' ref={this.props.sectionRef.about}>
         <h2 className='nunito-900'>ABOUT</h2>
         <div className='about-text-container varela-round'>
+          <p>
+            Hello! My name is Daniel Pham and I&apos;m a Software Developer.
+          </p>
           <p id='textOne' ref={this.props.sectionRef.textOne}>
-            I started coding using an online resource called &quot;The Odin Project&quot;.
-            As I was working through the curriculum, I created a copy of the Google homepage
-            as a project and I was instantly addicted to the process. Soon after, I had an
-            opportunity to join a Full-Immersion Web Development Program at LearningFuze and
-            jumped on the opportunity to pursue my new found passion.
+            My interest in coding began when I started an online Web Development course called The Odin Project.
+            During the course, my first project was to recreate the Google homepage
+            using only HTML and CSS. Completing this project was the moment that I realized
+            I wanted to pursue programming as my career. I was addicted.
           </p>
           <p id='textTwo' ref={this.props.sectionRef.textTwo}>
-            At LearningFuze, I dedicated 10+ hours a day over 14 weeks to learning
-            new technologies, such as JavaScript (ES5/ES6), Node.js, React, and more.
-            I have been able to apply these technologies to create projects in a work-like
-            environment. In such a short time, my passion for coding had substantially increased.
+            Soon after, I had the opportunity to join a Web Development Bootcamp at LearningFuze.
+            I put my life on hold and took the risk and it was the best decision I
+            have made in my life. In such a short time, programming has become a passion of mine.
           </p>
           <p id='textThree' ref={this.props.sectionRef.textThree}>
-            I recently graduated from LearningFuze and have begun my job search.
-            I&apos;m excited to work for a company where I can continue to learn and expand my knowledge.
+            Recently, I graduated from LearningFuze and have started looking for my first position
+            as a Software Developer. I&apos;m hoping to find a company that shares the
+            same mindset and values as I do and that will set me on the right trajactory as I begin my career.
           </p>
           <div className='about-button-container'>
             <a href='https://drive.google.com/file/d/1QWSQ65Qzn4Rjqv1AOek894Ow4oI2ekm9/view?usp=sharing' target='_blank' rel='noreferrer' className='icon-container'>RESUME</a>
