@@ -119,6 +119,7 @@ i {
   justify-content: center;
   align-items: center;
   padding: 100px 0;
+  background-color: #383838;
 }
 
 .about-container > h2 {
@@ -174,8 +175,13 @@ i {
   justify-content: center;
   align-items: center;
   padding: 20px 0;
-  transform: scale(1);
-  transition-duration: 0.5s;
+  transition: 500ms ease-in;
+  margin-top: 25px;
+}
+
+.fade-in {
+  opacity: 100%;
+  margin-top: 0;
 }
 
 .skill-container > img {
@@ -389,10 +395,6 @@ i {
   filter: brightness(110%);
 }
 
-.skill-container:hover {
-  transform: scale(1.2);
-}
-
 .contact > input:focus,
 .contact > textarea:focus {
   outline: none;
@@ -423,10 +425,6 @@ i {
 
   .skill-container > h3 {
     font-size: 18px;
-  }
-
-  .skill-container:hover {
-    transform: scale(1.5);
   }
 
   .project,

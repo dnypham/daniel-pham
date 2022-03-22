@@ -12,7 +12,8 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
-      isActive: null
+      isSectionActive: null,
+      isIconActive: null
     };
 
     this.home = React.createRef();
@@ -21,23 +22,41 @@ export default class App extends React.Component {
     this.textTwo = React.createRef();
     this.textThree = React.createRef();
     this.skills = React.createRef();
+    this.javascript = React.createRef();
+    this.node = React.createRef();
+    this.react = React.createRef();
+    this.express = React.createRef();
+    this.postgres = React.createRef();
+    this.html = React.createRef();
+    this.css = React.createRef();
     this.tools = React.createRef();
     this.projects = React.createRef();
     this.event = React.createRef();
     this.brew = React.createRef();
     this.contact = React.createRef();
 
-    this.projectsObj = {
+    this.aboutRefs = {
+      about: this.about,
+      textOne: this.textOne,
+      textTwo: this.textTwo,
+      textThree: this.textThree
+    };
+
+    this.projectsRefs = {
       projects: this.projects,
       event: this.event,
       brew: this.brew
     };
 
-    this.aboutObj = {
-      about: this.about,
-      textOne: this.textOne,
-      textTwo: this.textTwo,
-      textThree: this.textThree
+    this.skillsRefs = {
+      skills: this.skills,
+      javascript: this.javascript,
+      react: this.react,
+      node: this.node,
+      express: this.express,
+      postgres: this.postgres,
+      html: this.html,
+      css: this.css
     };
 
     this.sections = [
@@ -54,41 +73,82 @@ export default class App extends React.Component {
       this.contact
     ];
 
-    const options = {
+    this.icons = [
+      this.javascript,
+      this.react,
+      this.node,
+      this.express,
+      this.postgres,
+      this.html,
+      this.css
+    ];
+
+    const sectionOptions = {
       root: null,
       threshold: 0.80,
       rootMargin: '0px'
     };
 
-    this.observer = new IntersectionObserver((entries, observer) => {
+    this.sectionObserver = new IntersectionObserver((entries, sectionObserver) => {
       entries.forEach(entry => {
         console.log(entry.target, entry.isIntersecting);
 
         if (entry.isIntersecting) {
           this.setState({
-            isActive: entry.target.id
+            isSectionActive: entry.target.id
           });
         }
       });
-    }, options);
+    }, sectionOptions);
+
+    const iconOptions = {
+      root: null,
+      threshold: 0.80,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    this.iconObserver = new IntersectionObserver((entries, iconObserver) => {
+      entries.forEach(entry => {
+        console.log(entry.target, entry.isIntersecting);
+
+        if (entry.isIntersecting) {
+          this.setState({
+            isIconActive: entry.target.id
+          });
+
+          entry.target.classList.remove('opacity-0');
+          entry.target.classList.add('fade-in');
+        }
+      });
+    }, iconOptions);
   }
 
   componentDidMount() {
     this.sections.forEach(section => {
-      this.observer.observe(section.current);
+      this.sectionObserver.observe(section.current);
+    });
+
+    this.icons.forEach(section => {
+      this.iconObserver.observe(section.current);
     });
   }
 
   render() {
     return (
       <>
-        <Navigation isActive={this.state.isActive} />
-        <Home sectionRef={this.home} isActive={this.state.isActive} />
-        <About sectionRef={this.aboutObj} isActive={this.state.isActive} />
-        <Skills sectionRef={this.skills} isActive={this.state.isActive} />
-        <Tools sectionRef={this.tools} isActive={this.state.isActive} />
-        <Projects sectionRef={this.projectsObj} isActive={this.state.isActive} />
-        <Contact sectionRef={this.contact} isActive={this.state.isActive} />
+        <Navigation isSectionActive={this.state.isSectionActive} />
+        <Home homeRef={this.home} isSectionActive={this.state.isSectionActive} />
+        <About aboutRefs={this.aboutRefs} isSectionActive={this.state.isSectionActive} />
+        <Skills
+          skillsRefs={this.skillsRefs}
+        />
+        <Tools
+          sectionRef={this.tools}
+          isSectionActive={this.state.isSectionActive}
+          isSkillActive={this.state.isSkillActive}
+        />
+        <Projects projectsRefs={this.projectsRefs} isSectionActive={this.state.isSectionActive} />
+        <Contact contactRef={this.contact} isSectionActive={this.state.isSectionActive} />
       </>
     );
   }
