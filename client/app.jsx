@@ -129,7 +129,7 @@ export default class App extends React.Component {
     const iconOptions = {
       root: null,
       threshold: 1,
-      rootMargin: '0px 0px -40px 0px'
+      rootMargin: '0px 0px -20px 0px'
     };
 
     this.iconObserver = new IntersectionObserver((entries, iconObserver) => {
