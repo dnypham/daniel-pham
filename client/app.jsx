@@ -126,22 +126,22 @@ export default class App extends React.Component {
       });
     }, sectionOptions);
 
-    const iconOptions = {
+    const appearOptions = {
       root: null,
-      threshold: 1,
-      rootMargin: '0px 0px -20px 0px'
+      threshold: 0.9,
+      rootMargin: '0px'
     };
 
-    this.iconObserver = new IntersectionObserver((entries, iconObserver) => {
+    this.appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
       entries.forEach(entry => {
         console.log(entry.target, entry.isIntersecting);
 
         if (entry.isIntersecting) {
-          entry.target.classList.remove('opacity-0');
-          entry.target.classList.add('fade-in');
+          entry.target.classList.add('appear');
+          appearOnScroll.unobserve(entry.target);
         }
       });
-    }, iconOptions);
+    }, appearOptions);
   }
 
   componentDidMount() {
@@ -150,7 +150,7 @@ export default class App extends React.Component {
     });
 
     this.icons.forEach(section => {
-      this.iconObserver.observe(section.current);
+      this.appearOnScroll.observe(section.current);
     });
   }
 

@@ -49,8 +49,17 @@
   overflow: hidden;
 }
 
-.opacity-0 {
+.fade-in {
   opacity: 0%;
+}
+
+.from-bottom {
+  transform: translateY(25%);
+}
+
+.appear {
+  opacity: 100%;
+  transform: translateY(0);
 }
 
 .justify-center {

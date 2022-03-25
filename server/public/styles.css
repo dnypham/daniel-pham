@@ -174,14 +174,10 @@ i {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px 0;
-  transition: 500ms ease-in;
   margin-top: 25px;
-}
-
-.fade-in {
-  opacity: 100%;
-  margin-top: 0;
+  transition:
+    opacity 500ms ease-in,
+    transform 500ms ease-in;
 }
 
 .skill-container > img {
