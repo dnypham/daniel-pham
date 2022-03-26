@@ -1,6 +1,19 @@
 import React from 'react';
 
 export default class Contact extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isLinkedInRotating: false,
+      isGitHubRotating: false
+    };
+  }
+
+  rotate() {
+
+  }
+
   render() {
     return (
       <>
@@ -33,10 +46,10 @@ export default class Contact extends React.Component {
           </div>
         </form >
         <div className='footer-container'>
-        <a href='https://www.linkedin.com/in/daniel-pham-10/' target='_blank' rel='noreferrer' className='icon-container'>
+          <a href='https://www.linkedin.com/in/daniel-pham-10/' target='_blank' rel='noreferrer' className={`icon-container ${this.state.isLinkedInRotating ? 'rotate' : ''}`} onMouseEnter={() => this.setState({ isLinkedInRotating: true })} onMouseLeave={() => this.setState({ isLinkedInRotating: false })}>
           <img className='white' src='images/linkedin.svg' />
         </a>
-        <a href='https://github.com/dnypham' target='_blank' rel='noreferrer' className='icon-container'>
+          <a href='https://github.com/dnypham' target='_blank' rel='noreferrer' className={`icon-container ${this.state.isGitHubRotating ? 'rotate' : ''}`} onMouseEnter={() => this.setState({ isGitHubRotating: true })} onMouseLeave={() => this.setState({ isGitHubRotating: false })}>
           <img className='white' src='images/github.svg' />
         </a>
       </div>
