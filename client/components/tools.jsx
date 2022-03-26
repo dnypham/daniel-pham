@@ -6,10 +6,6 @@ export default class Tools extends React.Component {
       <div id='tools' className='skills-container' ref={this.props.iconRefs.tools}>
         <h2 className='nunito-900'>TOOLS</h2>
         <div className='row wrap justify-center'>
-          <div className='skill-container fade-in from-bottom' ref={this.props.iconRefs.vscode}>
-            <img src='images/vscode.svg'></img>
-            <h3 className='nunito-900'>VS Code</h3>
-          </div>
           <div className='skill-container fade-in from-bottom' ref={this.props.iconRefs.git}>
             <img src='images/git.svg'></img>
             <h3 className='nunito-900'>Git</h3>
@@ -18,13 +14,17 @@ export default class Tools extends React.Component {
             <img src='images/npm.svg'></img>
             <h3 className='nunito-900'>npm</h3>
           </div>
+          <div className='skill-container fade-in from-bottom' ref={this.props.iconRefs.webpack}>
+            <img src='images/webpack.svg'></img>
+            <h3 className='nunito-900'>Webpack</h3>
+          </div>
           <div className='skill-container fade-in from-bottom' ref={this.props.iconRefs.babel}>
             <img src='images/babel.svg'></img>
             <h3 className='nunito-900'>Babel</h3>
           </div>
-          <div className='skill-container fade-in from-bottom' ref={this.props.iconRefs.webpack}>
-            <img src='images/webpack.svg'></img>
-            <h3 className='nunito-900'>Webpack</h3>
+          <div className='skill-container fade-in from-bottom' ref={this.props.iconRefs.vscode}>
+            <img src='images/vscode.svg'></img>
+            <h3 className='nunito-900'>VS Code</h3>
           </div>
           <div className='skill-container fade-in from-bottom' ref={this.props.iconRefs.figma}>
             <img src='images/figma.svg'></img>
