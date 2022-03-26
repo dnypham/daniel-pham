@@ -334,7 +334,8 @@ i {
 .contact > input,
 .contact > textarea,
 .contact > div {
-  width: 300px;
+  max-width: 400px;
+  width: 90vw;
   margin: 1px;
 }
 
@@ -475,6 +476,10 @@ i {
     width: 400px;
   }
 
+  .contact > textarea {
+    height: 200px;
+  }
+
   .about-text-container {
     width: 500px;
     font-size: 18px;
@@ -482,8 +487,6 @@ i {
 
   .project > h4 {
     font-size: 14px;
-
-    /* padding-top: 15px; */
   }
 
   .project > p {
@@ -517,6 +520,14 @@ i {
 
   .about-text-container {
     font-size: 18px;
+    width: 600px;
+    max-width: 600px;
+  }
+
+  .contact > input,
+  .contact > textarea,
+  .contact > div {
+    max-width: 500px;
     width: 500px;
   }
 
@@ -614,10 +625,7 @@ i {
     font-size: 26px;
   }
 
-  .project,
-  .contact > input,
-  .contact > textarea,
-  .contact > div {
+  .project {
     width: 450px;
   }
 
