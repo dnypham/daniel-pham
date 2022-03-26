@@ -8,7 +8,7 @@ export default class Projects extends React.Component {
         <div className='project-container'>
           <div id='event' className='project' ref={this.props.projectsRefs.event}>
             <div className='image-container'>
-              <img src='images/eventinerary.jpg'></img>
+              <img src='images/eventinerary.png'></img>
             </div>
             <div className='project-text-container'>
               <h4 className='nunito-800'>EVENTINERARY</h4>
@@ -35,7 +35,7 @@ export default class Projects extends React.Component {
         <div className='project-container'>
           <div id='brew' className='project' ref={this.props.projectsRefs.brew}>
             <div className='image-container'>
-              <img src='images/brew-discovery.jpg'></img>
+              <img src='images/brew-discovery.png'></img>
             </div>
             <div className='project-text-container'>
               <h4 className='nunito-800'>BREW DISCOVERY</h4>
