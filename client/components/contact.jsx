@@ -18,9 +18,9 @@ export default class Contact extends React.Component {
     return (
       <>
         <form action='https://getform.io/f/6a889d2f-f3fb-4129-b952-d3cdb8ea6de9' method='POST'>
-          <div id="contact" className='contact-container' ref={this.props.contactRef}>
+          <div id="contact" className='contact-container fade-in' ref={this.props.contactRefs.contactContainer}>
             <h2 className='nunito-900'>CONTACT</h2>
-            <div className='contact'>
+            <div id='contact-animation' className='contact'>
               <input
                 required
                 type='text'

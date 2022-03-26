@@ -5,6 +5,7 @@ html {
 body {
   position: relative;
   background-color: #171717;
+  overflow-x: hidden;
 }
 
 /* ----------NAVIGATION---------- */
@@ -202,8 +203,7 @@ i {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 20px 10%;
-  padding-top: 100px;
+  padding: 100px 10%;
 }
 
 .projects-container > h2 {
@@ -329,6 +329,19 @@ i {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: opacity 500ms ease-in;
+}
+
+.bounce {
+  animation: bounce 1.5s ease-in-out alternate 1;
+}
+
+@keyframes bounce {
+  0% { transform: scale(0.9); }
+  25% { transform: scale(1.1); }
+  50% { transform: scale(0.95); }
+  75% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 .contact > input,
@@ -615,7 +628,7 @@ i {
 
 @media only screen and (min-width: 1200px) {
   .projects-container {
-    padding: 20px 12%;
+    padding: 100px 12%;
   }
 
   .skills-container {

@@ -38,10 +38,11 @@ export default class App extends React.Component {
     this.git = React.createRef();
     this.figma = React.createRef();
     this.slack = React.createRef();
+    this.canva = React.createRef();
     this.projects = React.createRef();
     this.event = React.createRef();
     this.brew = React.createRef();
-    this.contact = React.createRef();
+    this.contactContainer = React.createRef();
 
     this.aboutRefs = {
       about: this.about,
@@ -54,6 +55,10 @@ export default class App extends React.Component {
       projects: this.projects,
       event: this.event,
       brew: this.brew
+    };
+
+    this.contactRefs = {
+      contactContainer: this.contactContainer
     };
 
     this.iconRefs = {
@@ -73,7 +78,8 @@ export default class App extends React.Component {
       webpack: this.webpack,
       git: this.git,
       figma: this.figma,
-      slack: this.slack
+      slack: this.slack,
+      canva: this.canva
     };
 
     this.sections = [
@@ -87,7 +93,7 @@ export default class App extends React.Component {
       this.projects,
       this.event,
       this.brew,
-      this.contact
+      this.contactContainer
     ];
 
     this.icons = [
@@ -105,7 +111,9 @@ export default class App extends React.Component {
       this.webpack,
       this.git,
       this.figma,
-      this.slack
+      this.slack,
+      this.canva,
+      this.contactContainer
     ];
 
     const sectionOptions = {
@@ -128,15 +136,18 @@ export default class App extends React.Component {
 
     const appearOptions = {
       root: null,
-      threshold: 0.9,
-      rootMargin: '0px'
+      threshold: 0.95,
+      rootMargin: '0px 0px -25px 0px'
     };
 
     this.appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
       entries.forEach(entry => {
-        console.log(entry.target, entry.isIntersecting);
+        console.log(entry.target.id, entry.target, entry.isIntersecting);
 
-        if (entry.isIntersecting) {
+        if (entry.target.id === 'contact' && entry.isIntersecting) {
+          entry.target.classList.add('appear');
+          entry.target.classList.add('bounce');
+        } else if (entry.isIntersecting) {
           entry.target.classList.add('appear');
           appearOnScroll.unobserve(entry.target);
         }
@@ -163,7 +174,7 @@ export default class App extends React.Component {
         <Skills iconRefs={this.iconRefs} />
         <Tools iconRefs={this.iconRefs} />
         <Projects projectsRefs={this.projectsRefs} isSectionActive={this.state.isSectionActive} />
-        <Contact contactRef={this.contact} isSectionActive={this.state.isSectionActive} />
+        <Contact contactRefs={this.contactRefs} isSectionActive={this.state.isSectionActive} />
       </>
     );
   }
