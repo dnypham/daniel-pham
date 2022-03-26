@@ -118,8 +118,7 @@ i {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 100px 0;
-  background-color: #171717;
+  padding: 150px 0;
 }
 
 .about-container > h2 {
@@ -128,7 +127,7 @@ i {
 }
 
 .about-text-container {
-  width: 300px;
+  width: 90vw;
   background-color: white;
   border-radius: 10px;
   padding: 10px 25px;
@@ -160,7 +159,7 @@ i {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 100px 50px;
+  padding: 150px 50px;
 }
 
 .skills-container > h2 {
@@ -197,8 +196,8 @@ i {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 20px 80px;
-  padding-top: 100px;
+  padding: 20px 10%;
+  padding-top: 150px;
 }
 
 .projects-container > h2 {
@@ -212,11 +211,13 @@ i {
   display: flex;
   justify-content: center;
   flex-basis: 100%;
-  padding: 20px 0;
+  padding: 40px 15px;
 }
 
 .project {
-  width: 300px;
+  max-width: 400px;
+  width: 90vw;
+  height: 500px;
   border-radius: 10px;
   background-color: white;
 }
@@ -224,8 +225,8 @@ i {
 .image-container {
   border-top-left-radius: inherit;
   border-top-right-radius: inherit;
-  width: inherit;
-  height: 250px;
+  width: 100%;
+  height: 50%;
 }
 
 .image-container > img {
@@ -236,21 +237,36 @@ i {
   object-fit: cover;
 }
 
-.project > h4 {
+.project-text-container {
+  height: 20%;
+}
+
+.project-text-container > h4 {
   text-align: center;
   font-size: 14px;
   margin: 0;
   padding: 10px;
 }
 
-.project > p {
-  font-size: 12px;
+.project-text-container > p {
+  font-size: 14px;
   margin: 0;
   padding: 0 20px;
   padding-bottom: 20px;
 }
 
-.tech-container {
+.project-skills-container {
+  height: 20%;
+}
+
+.project-skills-container > h4 {
+  text-align: center;
+  font-size: 14px;
+  margin: 0;
+  padding: 10px;
+}
+
+.project-skills-container > .tech-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -265,9 +281,10 @@ i {
 }
 
 .button-container {
+  height: 10%;
   display: flex;
   justify-content: space-between;
-  padding-top: 10px;
+  align-items: center;
 }
 
 .button-container > a {
@@ -293,7 +310,7 @@ i {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 100px;
+  padding-top: 150px;
 }
 
 .contact-container > h2 {
@@ -423,11 +440,19 @@ i {
     font-size: 18px;
   }
 
+  .project {
+    height: 550px;
+  }
+
+  .button-container {
+    padding-top: 0;
+  }
+
   .project,
   .contact > input,
   .contact > textarea,
   .contact > div {
-    width: 350px;
+    width: 400px;
   }
 
   .about-text-container {
@@ -436,7 +461,8 @@ i {
 
   .project > h4 {
     font-size: 14px;
-    padding-top: 15px;
+
+    /* padding-top: 15px; */
   }
 
   .project > p {
@@ -447,10 +473,6 @@ i {
     font-size: 12px;
     width: 290px;
     height: 25px;
-  }
-
-  .image-container {
-    height: 300px;
   }
 }
 
@@ -485,11 +507,8 @@ i {
     padding: 100px 150px;
   }
 
-  .project,
-  .contact > input,
-  .contact > textarea,
-  .contact > div {
-    width: 400px;
+  .project {
+    height: 570px;
   }
 
   .project > h4 {
@@ -563,6 +582,10 @@ i {
 }
 
 @media only screen and (min-width: 1200px) {
+  .projects-container {
+    padding: 20px 12%;
+  }
+
   .about-container > h2,
   .skills-container > h2,
   .projects-container > h2,
@@ -590,10 +613,6 @@ i {
     font-size: 16px;
     width: 300px;
     height: 30px;
-  }
-
-  .image-container {
-    height: 300px;
   }
 
   .submit-container > button {

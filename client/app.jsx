@@ -110,8 +110,8 @@ export default class App extends React.Component {
 
     const sectionOptions = {
       root: null,
-      threshold: 0.60,
-      rootMargin: '0px 0px -200px 0px'
+      threshold: 0.85,
+      rootMargin: '0px 0px 0px 0px'
     };
 
     this.sectionObserver = new IntersectionObserver((entries, sectionObserver) => {
