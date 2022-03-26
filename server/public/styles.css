@@ -413,6 +413,20 @@ i {
   outline: none;
 }
 
+/* ----------SCROLLBAR---------- */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #171717;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a9cec2;
+}
+
 /* ----------MEDIA QUERIES---------- */
 
 @media only screen and (min-width: 576px) {
