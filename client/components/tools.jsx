@@ -38,10 +38,6 @@ export default class Tools extends React.Component {
             <img src='images/slack.svg'></img>
             <h3 className='nunito-900'>Slack</h3>
           </div>
-          <div className='skill-container fade-in from-bottom' ref={this.props.iconRefs.canva}>
-            <img src='images/canva.svg'></img>
-            <h3 className='nunito-900'>Canva</h3>
-          </div>
         </div>
       </div>
     );

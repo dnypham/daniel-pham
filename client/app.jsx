@@ -38,7 +38,6 @@ export default class App extends React.Component {
     this.git = React.createRef();
     this.figma = React.createRef();
     this.slack = React.createRef();
-    this.canva = React.createRef();
     this.projects = React.createRef();
     this.event = React.createRef();
     this.brew = React.createRef();
@@ -78,8 +77,7 @@ export default class App extends React.Component {
       webpack: this.webpack,
       git: this.git,
       figma: this.figma,
-      slack: this.slack,
-      canva: this.canva
+      slack: this.slack
     };
 
     this.sections = [
@@ -112,7 +110,6 @@ export default class App extends React.Component {
       this.git,
       this.figma,
       this.slack,
-      this.canva,
       this.contactContainer
     ];
 
@@ -136,8 +133,8 @@ export default class App extends React.Component {
 
     const appearOptions = {
       root: null,
-      threshold: 0.95,
-      rootMargin: '0px 0px -25px 0px'
+      threshold: 0.9,
+      rootMargin: '0px 0px -30px 0px'
     };
 
     this.appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
