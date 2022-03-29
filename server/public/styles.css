@@ -59,9 +59,9 @@ i {
   background-color: #171717;
   top: 0;
   bottom: 0;
-  right: -375px;
+  right: -100vw;
   transition: 0.5s ease-in-out;
-  width: 375px;
+  width: 100%;
 }
 
 .view {
