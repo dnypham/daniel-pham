@@ -137,12 +137,13 @@ i {
   width: 90vw;
   background-color: white;
   border-radius: 10px;
-  padding: 10px 25px;
+  padding: 10px 20px;
   font-size: 16px;
 }
 
 .about-content-container {
   height: 90%;
+  line-height: 1.2;
 }
 
 .about-button-container {
@@ -559,7 +560,7 @@ i {
   .about-text-container {
     font-size: 18px;
     width: 600px;
-    max-width: 600px;
+    max-width: 700px;
   }
 
   .contact > input,
@@ -623,7 +624,7 @@ i {
 
   .about-text-container {
     font-size: 20px;
-    width: 600px;
+    width: 700px;
   }
 
   .about-container > h2,
@@ -635,6 +636,11 @@ i {
 
   .skills-container {
     padding: 100px 10%;
+  }
+
+  .skill-container {
+    height: 200px;
+    width: 150px;
   }
 
   .skill-container > h3 {
