@@ -38,7 +38,7 @@ export default class App extends React.Component {
     this.projects = React.createRef();
     this.event = React.createRef();
     this.brew = React.createRef();
-    this.contactContainer = React.createRef();
+    this.contactForm = React.createRef();
     this.aboutHeader = React.createRef();
     this.skillsHeader = React.createRef();
     this.toolsHeader = React.createRef();
@@ -46,49 +46,48 @@ export default class App extends React.Component {
     this.contactHeader = React.createRef();
     this.contact = React.createRef();
 
-    this.sectionTitleRefs = {
-      about: this.aboutHeader,
-      skills: this.skillsHeader,
-      tools: this.toolsHeader,
-      projects: this.projectsHeader,
-      contact: this.contactHeader
-    };
-
     this.aboutSectionRefs = {
-      header: this.aboutHeader,
       about: this.about,
+      header: this.aboutHeader,
       content: this.aboutContent
     };
 
-    this.projectsRefs = {
-      projects: this.projects,
-      event: this.event,
-      brew: this.brew
-    };
-
-    this.iconRefs = {
+    this.skillsSectionRefs = {
       skills: this.skills,
+      header: this.skillsHeader,
       javascript: this.javascript,
       react: this.react,
       node: this.node,
       express: this.express,
       postgres: this.postgres,
       html: this.html,
-      css: this.css,
+      css: this.css
+    };
+
+    this.toolsSectionRefs = {
       tools: this.tools,
-      github: this.github,
-      vscode: this.vscode,
-      babel: this.babel,
+      header: this.toolsHeader,
+      git: this.git,
       npm: this.npm,
       webpack: this.webpack,
-      git: this.git,
+      babel: this.babel,
+      vscode: this.vscode,
       figma: this.figma,
+      github: this.github,
       slack: this.slack
     };
 
-    this.contactRefs = {
-      contactContainer: this.contactContainer,
-      contact: this.contact
+    this.projectsSectionRefs = {
+      projects: this.projects,
+      header: this.projectsHeader,
+      event: this.event,
+      brew: this.brew
+    };
+
+    this.contactSectionRefs = {
+      contact: this.contact,
+      contactForm: this.contactForm,
+      header: this.contactHeader
     };
 
     this.sections = [
@@ -99,7 +98,7 @@ export default class App extends React.Component {
       this.projects,
       this.event,
       this.brew,
-      this.contactContainer
+      this.contact
     ];
 
     this.icons = [
@@ -118,7 +117,7 @@ export default class App extends React.Component {
       this.git,
       this.figma,
       this.slack,
-      this.contact
+      this.contactForm
     ];
 
     this.sectionHeaders = [
@@ -129,11 +128,8 @@ export default class App extends React.Component {
       this.contactHeader
     ];
 
-    this.aboutSection = [
-      this.aboutContent
-    ];
-
-    this.projectsSection = [
+    this.sliders = [
+      this.aboutContent,
       this.event,
       this.brew
     ];
@@ -160,14 +156,15 @@ export default class App extends React.Component {
       rootMargin: '0px 0px 0px 0px'
     };
 
-    this.appearOnScrollIcons = new IntersectionObserver((entries, appearOnScrollIcons) => {
+    this.appearIcons = new IntersectionObserver((entries, appearIcons) => {
       entries.forEach(entry => {
-        if (entry.target.id === 'contact-animation' && entry.isIntersecting) {
+        if (entry.target.id === 'contact-form' && entry.isIntersecting) {
           entry.target.classList.add('appear');
           entry.target.classList.add('bounce');
+          appearIcons.unobserve(entry.target);
         } else if (entry.isIntersecting) {
           entry.target.classList.add('appear');
-          appearOnScrollIcons.unobserve(entry.target);
+          appearIcons.unobserve(entry.target);
         }
       });
     }, appearIconsOptions);
@@ -178,45 +175,31 @@ export default class App extends React.Component {
       rootMargin: '0px 0px -200px 0px'
     };
 
-    this.appearOnScrollHeaders = new IntersectionObserver((entries, appearOnScrollHeaders) => {
+    this.appearHeaders = new IntersectionObserver((entries, appearHeaders) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('appear');
           entry.target.classList.add('enlarge');
-          appearOnScrollHeaders.unobserve(entry.target);
+          appearHeaders.unobserve(entry.target);
         }
       });
     }, headerOptions);
 
-    const aboutOptions = {
+    const slidersOptions = {
       root: null,
-      threshold: 0.3,
+      threshold: 0.4,
       rootMargin: '0px 0px 0px 0px'
     };
 
-    this.appearOnScrollAbout = new IntersectionObserver((entries, appearOnScrollAbout) => {
+    this.appearSliders = new IntersectionObserver((entries, appearSliders) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('appear');
-          appearOnScrollAbout.unobserve(entry.target);
+          appearSliders.unobserve(entry.target);
         }
       });
-    }, aboutOptions);
+    }, slidersOptions);
 
-    const projectOptions = {
-      root: null,
-      threshold: 0.5,
-      rootMargin: '0px 0px 0px 0px'
-    };
-
-    this.appearOnScrollProjects = new IntersectionObserver((entries, appearOnScrollProjects) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('appear');
-          appearOnScrollProjects.unobserve(entry.target);
-        }
-      });
-    }, projectOptions);
   }
 
   componentDidMount() {
@@ -224,34 +207,29 @@ export default class App extends React.Component {
       this.sectionObserver.observe(section.current);
     });
 
-    this.icons.forEach(section => {
-      this.appearOnScrollIcons.observe(section.current);
-    });
-
     this.sectionHeaders.forEach(header => {
-      this.appearOnScrollHeaders.observe(header.current);
+      this.appearHeaders.observe(header.current);
     });
 
-    this.aboutSection.forEach(content => {
-      this.appearOnScrollAbout.observe(content.current);
+    this.sliders.forEach(slider => {
+      this.appearSliders.observe(slider.current);
     });
 
-    this.projectsSection.forEach(project => {
-      this.appearOnScrollProjects.observe(project.current);
+    this.icons.forEach(icon => {
+      this.appearIcons.observe(icon.current);
     });
   }
 
   render() {
-    console.log(this.state);
     return (
       <>
         <Navigation isSectionActive={this.state.isSectionActive} />
-        <Home homeRef={this.home} isSectionActive={this.state.isSectionActive} />
-        <About aboutSectionRefs={this.aboutSectionRefs} isSectionActive={this.state.isSectionActive} />
-        <Skills sectionTitleRefs={this.sectionTitleRefs} iconRefs={this.iconRefs} />
-        <Tools sectionTitleRefs={this.sectionTitleRefs} iconRefs={this.iconRefs} />
-        <Projects sectionTitleRefs={this.sectionTitleRefs} projectsRefs={this.projectsRefs} isSectionActive={this.state.isSectionActive} />
-        <Contact sectionTitleRefs={this.sectionTitleRefs} contactRefs={this.contactRefs} isSectionActive={this.state.isSectionActive} />
+        <Home homeRef={this.home} />
+        <About aboutSectionRefs={this.aboutSectionRefs} />
+        <Skills skillsSectionRefs={this.skillsSectionRefs} />
+        <Tools toolsSectionRefs={this.toolsSectionRefs} />
+        <Projects projectsSectionRefs={this.projectsSectionRefs} />
+        <Contact contactSectionRefs={this.contactSectionRefs} />
       </>
     );
   }

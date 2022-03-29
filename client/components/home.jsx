@@ -1,13 +1,6 @@
 import React from 'react';
 
 export default class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      active: false
-    };
-  }
-
   render() {
     return (
       <div id='home' className='home' ref={this.props.homeRef}>
