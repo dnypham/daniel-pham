@@ -179,7 +179,13 @@ i {
   font-size: 20px;
 }
 
+.skill-container-rows {
+  max-width: 1000px;
+}
+
 .skill-container {
+  height: 200px;
+  width: 150px;
   flex-basis: calc(100% / 3);
   display: flex;
   flex-direction: column;

@@ -6,7 +6,7 @@ export default class Skills extends React.Component {
     return (
       <div id='skills' className='skills-container' ref={this.props.iconRefs.skills}>
         <h2 className='nunito-900 fade-in' ref={this.props.sectionTitleRefs.skills}>SKILLS</h2>
-        <div className='row wrap justify-center'>
+        <div className='row wrap justify-center skill-container-rows'>
           <div className='skill-container fade-in from-bottom' ref={this.props.iconRefs.javascript}>
             <img src='images/javascript.svg'></img>
             <h3 className='nunito-900'>JavaScript</h3>
