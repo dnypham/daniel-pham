@@ -12,15 +12,12 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
-      isSectionActive: null,
-      isIconActive: null
+      isSectionActive: null
     };
 
     this.home = React.createRef();
     this.about = React.createRef();
-    this.textOne = React.createRef();
-    this.textTwo = React.createRef();
-    this.textThree = React.createRef();
+    this.aboutContent = React.createRef();
     this.skills = React.createRef();
     this.javascript = React.createRef();
     this.node = React.createRef();
@@ -57,22 +54,16 @@ export default class App extends React.Component {
       contact: this.contactHeader
     };
 
-    this.aboutRefs = {
+    this.aboutSectionRefs = {
+      header: this.aboutHeader,
       about: this.about,
-      textOne: this.textOne,
-      textTwo: this.textTwo,
-      textThree: this.textThree
+      content: this.aboutContent
     };
 
     this.projectsRefs = {
       projects: this.projects,
       event: this.event,
       brew: this.brew
-    };
-
-    this.contactRefs = {
-      contactContainer: this.contactContainer,
-      contact: this.contact
     };
 
     this.iconRefs = {
@@ -95,12 +86,14 @@ export default class App extends React.Component {
       slack: this.slack
     };
 
+    this.contactRefs = {
+      contactContainer: this.contactContainer,
+      contact: this.contact
+    };
+
     this.sections = [
       this.home,
       this.about,
-      this.textOne,
-      this.textTwo,
-      this.textThree,
       this.skills,
       this.tools,
       this.projects,
@@ -125,12 +118,10 @@ export default class App extends React.Component {
       this.git,
       this.figma,
       this.slack,
-      this.contact,
-      this.event,
-      this.brew
+      this.contact
     ];
 
-    this.headers = [
+    this.sectionHeaders = [
       this.aboutHeader,
       this.skillsHeader,
       this.toolsHeader,
@@ -138,16 +129,23 @@ export default class App extends React.Component {
       this.contactHeader
     ];
 
+    this.aboutSection = [
+      this.aboutContent
+    ];
+
+    this.projectsSection = [
+      this.event,
+      this.brew
+    ];
+
     const sectionOptions = {
       root: null,
-      threshold: 0.85,
-      rootMargin: '0px 0px 0px 0px'
+      threshold: 0.50,
+      rootMargin: '0px 0px -100px 0px'
     };
 
     this.sectionObserver = new IntersectionObserver((entries, sectionObserver) => {
       entries.forEach(entry => {
-        console.log(entry.target, entry.isIntersecting);
-
         if (entry.isIntersecting) {
           this.setState({
             isSectionActive: entry.target.id
@@ -156,25 +154,23 @@ export default class App extends React.Component {
       });
     }, sectionOptions);
 
-    const appearOptions = {
+    const appearIconsOptions = {
       root: null,
       threshold: 0.8,
       rootMargin: '0px 0px 0px 0px'
     };
 
-    this.appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
+    this.appearOnScrollIcons = new IntersectionObserver((entries, appearOnScrollIcons) => {
       entries.forEach(entry => {
-        console.log(entry.target.id, entry.target, entry.isIntersecting);
-
         if (entry.target.id === 'contact-animation' && entry.isIntersecting) {
           entry.target.classList.add('appear');
           entry.target.classList.add('bounce');
         } else if (entry.isIntersecting) {
           entry.target.classList.add('appear');
-          appearOnScroll.unobserve(entry.target);
+          appearOnScrollIcons.unobserve(entry.target);
         }
       });
-    }, appearOptions);
+    }, appearIconsOptions);
 
     const headerOptions = {
       root: null,
@@ -184,14 +180,43 @@ export default class App extends React.Component {
 
     this.appearOnScrollHeaders = new IntersectionObserver((entries, appearOnScrollHeaders) => {
       entries.forEach(entry => {
-        console.log(entry.target.id, entry.target, entry.isIntersecting);
-
         if (entry.isIntersecting) {
           entry.target.classList.add('appear');
           entry.target.classList.add('enlarge');
+          appearOnScrollHeaders.unobserve(entry.target);
         }
       });
     }, headerOptions);
+
+    const aboutOptions = {
+      root: null,
+      threshold: 0.3,
+      rootMargin: '0px 0px 0px 0px'
+    };
+
+    this.appearOnScrollAbout = new IntersectionObserver((entries, appearOnScrollAbout) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('appear');
+          appearOnScrollAbout.unobserve(entry.target);
+        }
+      });
+    }, aboutOptions);
+
+    const projectOptions = {
+      root: null,
+      threshold: 0.5,
+      rootMargin: '0px 0px 0px 0px'
+    };
+
+    this.appearOnScrollProjects = new IntersectionObserver((entries, appearOnScrollProjects) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('appear');
+          appearOnScrollProjects.unobserve(entry.target);
+        }
+      });
+    }, projectOptions);
   }
 
   componentDidMount() {
@@ -200,20 +225,29 @@ export default class App extends React.Component {
     });
 
     this.icons.forEach(section => {
-      this.appearOnScroll.observe(section.current);
+      this.appearOnScrollIcons.observe(section.current);
     });
 
-    this.headers.forEach(header => {
+    this.sectionHeaders.forEach(header => {
       this.appearOnScrollHeaders.observe(header.current);
+    });
+
+    this.aboutSection.forEach(content => {
+      this.appearOnScrollAbout.observe(content.current);
+    });
+
+    this.projectsSection.forEach(project => {
+      this.appearOnScrollProjects.observe(project.current);
     });
   }
 
   render() {
+    console.log(this.state);
     return (
       <>
         <Navigation isSectionActive={this.state.isSectionActive} />
         <Home homeRef={this.home} isSectionActive={this.state.isSectionActive} />
-        <About sectionTitleRefs={this.sectionTitleRefs} aboutRefs={this.aboutRefs} isSectionActive={this.state.isSectionActive} />
+        <About aboutSectionRefs={this.aboutSectionRefs} isSectionActive={this.state.isSectionActive} />
         <Skills sectionTitleRefs={this.sectionTitleRefs} iconRefs={this.iconRefs} />
         <Tools sectionTitleRefs={this.sectionTitleRefs} iconRefs={this.iconRefs} />
         <Projects sectionTitleRefs={this.sectionTitleRefs} projectsRefs={this.projectsRefs} isSectionActive={this.state.isSectionActive} />

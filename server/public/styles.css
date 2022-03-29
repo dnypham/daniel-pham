@@ -184,8 +184,8 @@ i {
 }
 
 .skill-container {
-  height: 200px;
-  width: 150px;
+  height: 150px;
+  width: 100px;
   flex-basis: calc(100% / 3);
   display: flex;
   flex-direction: column;

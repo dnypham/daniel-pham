@@ -51,6 +51,7 @@
 
 .fade-in {
   opacity: 0%;
+  transition: opacity 500ms ease-in, transform 500ms ease-in;
 }
 
 .from-bottom {
