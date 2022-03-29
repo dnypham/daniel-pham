@@ -45,10 +45,48 @@
   color: white;
 }
 
-.test {
-  background-color: lightcoral;
-}
-
 .no-scroll {
   overflow: hidden;
+}
+
+.fade-in {
+  opacity: 0%;
+  transition: opacity 500ms ease-in, transform 500ms ease-in;
+}
+
+.from-bottom {
+  transform: translateY(25%);
+}
+
+.from-left {
+  transform: translateX(-25%);
+}
+
+.from-right {
+  transform: translateX(25%);
+}
+
+.appear {
+  opacity: 100%;
+  transform: translateY(0);
+  transform: translateX(0);
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.rotate {
+  transform: rotate(360deg);
+  transition: transform 1s ease-in-out;
+}
+
+.enlarge {
+  animation: enlarge 0.5s ease-in-out alternate 1;
+}
+
+@keyframes enlarge {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
 }
