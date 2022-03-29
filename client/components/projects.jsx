@@ -4,9 +4,9 @@ export default class Projects extends React.Component {
   render() {
     return (
       <div id='projects' className='projects-container' ref={this.props.projectsRefs.projects}>
-        <h2 className='nunito-900'>PROJECTS</h2>
+        <h2 className='nunito-900 fade-in' ref={this.props.sectionTitleRefs.projects}>PROJECTS</h2>
         <div className='project-container'>
-          <div id='event' className='project' ref={this.props.projectsRefs.event}>
+          <div id='event' className='project fade-in from-left' ref={this.props.projectsRefs.event}>
             <div className='image-container'>
               <img src='images/eventinerary.png'></img>
             </div>
@@ -33,7 +33,7 @@ export default class Projects extends React.Component {
           </div>
         </div>
         <div className='project-container'>
-          <div id='brew' className='project' ref={this.props.projectsRefs.brew}>
+          <div id='brew' className='project fade-in from-right' ref={this.props.projectsRefs.brew}>
             <div className='image-container'>
               <img src='images/brew-discovery.png'></img>
             </div>

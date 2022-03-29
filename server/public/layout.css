@@ -57,9 +57,18 @@
   transform: translateY(25%);
 }
 
+.from-left {
+  transform: translateX(-25%);
+}
+
+.from-right {
+  transform: translateX(25%);
+}
+
 .appear {
   opacity: 100%;
   transform: translateY(0);
+  transform: translateX(0);
 }
 
 .justify-center {
@@ -69,4 +78,14 @@
 .rotate {
   transform: rotate(360deg);
   transition: transform 1s ease-in-out;
+}
+
+.enlarge {
+  animation: enlarge 0.5s ease-in-out alternate 1;
+}
+
+@keyframes enlarge {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
 }

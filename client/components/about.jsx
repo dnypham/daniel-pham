@@ -4,7 +4,7 @@ export default class About extends React.Component {
   render() {
     return (
       <div id='about' className='about-container' ref={this.props.aboutRefs.about}>
-        <h2 className='nunito-900'>ABOUT</h2>
+        <h2 className='nunito-900 fade-in' ref={this.props.sectionTitleRefs.about}>ABOUT</h2>
         <div className='about-text-container varela-round'>
           <div className='about-content-container'>
             <p>

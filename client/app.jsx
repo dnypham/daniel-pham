@@ -42,6 +42,20 @@ export default class App extends React.Component {
     this.event = React.createRef();
     this.brew = React.createRef();
     this.contactContainer = React.createRef();
+    this.aboutHeader = React.createRef();
+    this.skillsHeader = React.createRef();
+    this.toolsHeader = React.createRef();
+    this.projectsHeader = React.createRef();
+    this.contactHeader = React.createRef();
+    this.contact = React.createRef();
+
+    this.sectionTitleRefs = {
+      about: this.aboutHeader,
+      skills: this.skillsHeader,
+      tools: this.toolsHeader,
+      projects: this.projectsHeader,
+      contact: this.contactHeader
+    };
 
     this.aboutRefs = {
       about: this.about,
@@ -57,7 +71,8 @@ export default class App extends React.Component {
     };
 
     this.contactRefs = {
-      contactContainer: this.contactContainer
+      contactContainer: this.contactContainer,
+      contact: this.contact
     };
 
     this.iconRefs = {
@@ -110,7 +125,17 @@ export default class App extends React.Component {
       this.git,
       this.figma,
       this.slack,
-      this.contactContainer
+      this.contact,
+      this.event,
+      this.brew
+    ];
+
+    this.headers = [
+      this.aboutHeader,
+      this.skillsHeader,
+      this.toolsHeader,
+      this.projectsHeader,
+      this.contactHeader
     ];
 
     const sectionOptions = {
@@ -133,15 +158,15 @@ export default class App extends React.Component {
 
     const appearOptions = {
       root: null,
-      threshold: 0.9,
-      rootMargin: '0px 0px -30px 0px'
+      threshold: 0.8,
+      rootMargin: '0px 0px 0px 0px'
     };
 
     this.appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
       entries.forEach(entry => {
         console.log(entry.target.id, entry.target, entry.isIntersecting);
 
-        if (entry.target.id === 'contact' && entry.isIntersecting) {
+        if (entry.target.id === 'contact-animation' && entry.isIntersecting) {
           entry.target.classList.add('appear');
           entry.target.classList.add('bounce');
         } else if (entry.isIntersecting) {
@@ -150,6 +175,23 @@ export default class App extends React.Component {
         }
       });
     }, appearOptions);
+
+    const headerOptions = {
+      root: null,
+      threshold: 1,
+      rootMargin: '0px 0px -200px 0px'
+    };
+
+    this.appearOnScrollHeaders = new IntersectionObserver((entries, appearOnScrollHeaders) => {
+      entries.forEach(entry => {
+        console.log(entry.target.id, entry.target, entry.isIntersecting);
+
+        if (entry.isIntersecting) {
+          entry.target.classList.add('appear');
+          entry.target.classList.add('enlarge');
+        }
+      });
+    }, headerOptions);
   }
 
   componentDidMount() {
@@ -160,6 +202,10 @@ export default class App extends React.Component {
     this.icons.forEach(section => {
       this.appearOnScroll.observe(section.current);
     });
+
+    this.headers.forEach(header => {
+      this.appearOnScrollHeaders.observe(header.current);
+    });
   }
 
   render() {
@@ -167,11 +213,11 @@ export default class App extends React.Component {
       <>
         <Navigation isSectionActive={this.state.isSectionActive} />
         <Home homeRef={this.home} isSectionActive={this.state.isSectionActive} />
-        <About aboutRefs={this.aboutRefs} isSectionActive={this.state.isSectionActive} />
-        <Skills iconRefs={this.iconRefs} />
-        <Tools iconRefs={this.iconRefs} />
-        <Projects projectsRefs={this.projectsRefs} isSectionActive={this.state.isSectionActive} />
-        <Contact contactRefs={this.contactRefs} isSectionActive={this.state.isSectionActive} />
+        <About sectionTitleRefs={this.sectionTitleRefs} aboutRefs={this.aboutRefs} isSectionActive={this.state.isSectionActive} />
+        <Skills sectionTitleRefs={this.sectionTitleRefs} iconRefs={this.iconRefs} />
+        <Tools sectionTitleRefs={this.sectionTitleRefs} iconRefs={this.iconRefs} />
+        <Projects sectionTitleRefs={this.sectionTitleRefs} projectsRefs={this.projectsRefs} isSectionActive={this.state.isSectionActive} />
+        <Contact sectionTitleRefs={this.sectionTitleRefs} contactRefs={this.contactRefs} isSectionActive={this.state.isSectionActive} />
       </>
     );
   }

@@ -4,7 +4,7 @@ export default class Tools extends React.Component {
   render() {
     return (
       <div id='tools' className='skills-container' ref={this.props.iconRefs.tools}>
-        <h2 className='nunito-900'>TOOLS</h2>
+        <h2 className='nunito-900 fade-in' ref={this.props.sectionTitleRefs.tools}>TOOLS</h2>
         <div className='row wrap justify-center'>
           <div className='skill-container fade-in from-bottom' ref={this.props.iconRefs.git}>
             <img src='images/git.svg'></img>

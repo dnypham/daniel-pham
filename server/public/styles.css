@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -15,7 +19,7 @@ body {
   display: flex;
   align-items: center;
   height: 80px;
-  width: 100%;
+  width: 100vw;
   padding: 0 30px;
   background-color: #171717;
 }
@@ -50,13 +54,14 @@ i {
 }
 
 .navigation-modal {
+  overflow-x: hidden;
   position: fixed;
   background-color: #171717;
   top: 0;
   bottom: 0;
-  right: -100vw;
+  right: -375px;
   transition: 0.5s ease-in-out;
-  width: 100%;
+  width: 375px;
 }
 
 .view {
@@ -204,6 +209,7 @@ i {
   justify-content: center;
   align-items: center;
   padding: 100px 10%;
+  overflow-x: hidden;
 }
 
 .projects-container > h2 {
@@ -211,6 +217,7 @@ i {
   flex-basis: 100%;
   color: white;
   font-size: 20px;
+  transition: opacity 500ms ease-in;
 }
 
 .project-container {
@@ -226,6 +233,9 @@ i {
   height: 500px;
   border-radius: 10px;
   background-color: white;
+  transition:
+    opacity 500ms ease-in,
+    transform 500ms ease-in;
 }
 
 .image-container {
@@ -330,6 +340,7 @@ i {
   justify-content: center;
   align-items: center;
   transition: opacity 500ms ease-in;
+  transform: scale(1);
 }
 
 .bounce {
@@ -337,10 +348,10 @@ i {
 }
 
 @keyframes bounce {
-  0% { transform: scale(0.9); }
-  25% { transform: scale(1.1); }
-  50% { transform: scale(0.95); }
-  75% { transform: scale(1.05); }
+  0% { transform: scale(0.95); }
+  25% { transform: scale(1.05); }
+  50% { transform: scale(0.975); }
+  75% { transform: scale(1.025); }
   100% { transform: scale(1); }
 }
 
@@ -510,6 +521,14 @@ i {
     font-size: 12px;
     width: 290px;
     height: 25px;
+  }
+
+  @keyframes bounce {
+    0% { transform: scale(0.9); }
+    25% { transform: scale(1.1); }
+    50% { transform: scale(0.95); }
+    75% { transform: scale(1.05); }
+    100% { transform: scale(1); }
   }
 }
 
