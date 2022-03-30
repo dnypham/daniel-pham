@@ -28,7 +28,7 @@ export default class About extends React.Component {
             </p>
           </div>
           <div className='about-button-container'>
-            <a href='https://drive.google.com/file/d/1QWSQ65Qzn4Rjqv1AOek894Ow4oI2ekm9/view?usp=sharing' target='_blank' rel='noreferrer' className='icon-container'>RESUME</a>
+            <a href='https://drive.google.com/file/d/1yjqWdNMLUtLoIZD4txOzYgio9WbnrdNB/view?usp=sharing' target='_blank' rel='noreferrer' className='icon-container'>RESUME</a>
           </div>
         </div>
       </div>
