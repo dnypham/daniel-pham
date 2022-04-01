@@ -17,7 +17,7 @@ export default class Projects extends React.Component {
         <div className='project-container'>
           <div id='event' className='project fade-in from-left' ref={this.props.projectsSectionRefs.event}>
             <div className='image-container'>
-              <img src={this.state.isEventineraryHovered ? 'images/eventinerary.gif' : 'images/eventinerary.png'} alt='Concert' onMouseEnter={() => this.setState({ isEventineraryHovered: true })} onMouseLeave={() => this.setState({ isEventineraryHovered: false })}></img>
+              <img src={this.state.isEventineraryHovered ? 'assets/projects/eventinerary.gif' : 'assets/projects/eventinerary.png'} alt='Concert' onMouseEnter={() => this.setState({ isEventineraryHovered: true })} onMouseLeave={() => this.setState({ isEventineraryHovered: false })}></img>
             </div>
             <div className='project-text-container'>
               <h4 className='nunito-800'>EVENTINERARY</h4>
@@ -26,13 +26,13 @@ export default class Projects extends React.Component {
             <div className='project-skills-container'>
               <h4 className='nunito-800'>TECH</h4>
               <div className='tech-container'>
-                <img src='images/react.svg'></img>
-                <img src='images/nodejs.svg'></img>
-                <img src='images/express.svg'></img>
-                <img src='images/postgresql.svg'></img>
-                <img src='images/javascript.svg'></img>
-                <img src='images/html.svg'></img>
-                <img src='images/css.svg'></img>
+                <img src='assets/skills/react.svg'></img>
+                <img src='assets/skills/nodejs.svg'></img>
+                <img src='assets/skills/express.svg'></img>
+                <img src='assets/skills/postgresql.svg'></img>
+                <img src='assets/skills/javascript.svg'></img>
+                <img src='assets/skills/html.svg'></img>
+                <img src='assets/skills/css.svg'></img>
               </div>
             </div>
             <div className='button-container'>
@@ -44,7 +44,7 @@ export default class Projects extends React.Component {
         <div className='project-container'>
           <div id='brew' className='project fade-in from-right' ref={this.props.projectsSectionRefs.brew}>
             <div className='image-container'>
-              <img src={this.state.isBrewDiscoveryHovered ? 'images/brew-discovery.gif' : 'images/brew-discovery.png'} alt='Beer' onMouseEnter={() => this.setState({ isBrewDiscoveryHovered: true })} onMouseLeave={() => this.setState({ isBrewDiscoveryHovered: false })}></img>
+              <img src={this.state.isBrewDiscoveryHovered ? 'assets/projects/brew-discovery.gif' : 'assets/projects/brew-discovery.png'} alt='Beer' onMouseEnter={() => this.setState({ isBrewDiscoveryHovered: true })} onMouseLeave={() => this.setState({ isBrewDiscoveryHovered: false })}></img>
             </div>
             <div className='project-text-container'>
               <h4 className='nunito-800'>BREW DISCOVERY</h4>
@@ -53,9 +53,9 @@ export default class Projects extends React.Component {
             <div className='project-skills-container'>
               <h4 className='nunito-800'>TECH</h4>
               <div className='tech-container'>
-                <img src='images/javascript.svg'></img>
-                <img src='images/html.svg'></img>
-                <img src='images/css.svg'></img>
+                <img src='assets/skills/javascript.svg'></img>
+                <img src='assets/skills/html.svg'></img>
+                <img src='assets/skills/css.svg'></img>
               </div>
             </div>
             <div className='button-container'>
