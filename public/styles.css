@@ -116,6 +116,8 @@ i {
   justify-content: center;
   align-items: center;
   padding: 150px 0;
+  height: 100vh;
+  border: red solid 1px;
 }
 
 .home > img {
