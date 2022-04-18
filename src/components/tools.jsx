@@ -37,6 +37,14 @@ export default function Tools(props) {
           <img src='assets/tools/slack.svg' alt='Slack'></img>
           <h3 className='nunito-900'>Slack</h3>
         </div>
+        <div className='skill-container fade-in from-bottom' ref={props.toolsSectionRefs.heroku}>
+          <img src='assets/tools/heroku.svg' alt='Heroku'></img>
+          <h3 className='nunito-900'>Heroku</h3>
+        </div>
+        <div className='skill-container fade-in from-bottom' ref={props.toolsSectionRefs.netlify}>
+          <img src='assets/tools/netlify.svg' alt='Netlify'></img>
+          <h3 className='nunito-900'>Netlify</h3>
+        </div>
       </div>
     </div>
   );
