@@ -22,12 +22,12 @@ export default function About(props) {
             CSS, JavaScript, React, Node.js, Express, and PostgreSQL.
           </p>
           <p>
-            I am now in the job market and I&apos;m excited to work for and grow with a company
+            I&apos;m now in the job market and I&apos;m excited to work for and grow with a company
             that shares the same mindset and values as I do.
           </p>
         </div>
         <div className='about-button-container'>
-          <a href='https://drive.google.com/file/d/1yjqWdNMLUtLoIZD4txOzYgio9WbnrdNB/view?usp=sharing' target='_blank' rel='noreferrer' className='icon-container nunito-800'>RESUME</a>
+          <a href='https://drive.google.com/file/d/1c-uFoM2qQFaxKjheC9IXCYWa5TgBid-_/view?usp=sharing' target='_blank' rel='noreferrer' className='icon-container nunito-800'>RESUME</a>
         </div>
       </div>
     </div>
