@@ -22,8 +22,8 @@ export default function About(props) {
             CSS, JavaScript, React, Node.js, Express, and PostgreSQL.
           </p>
           <p>
-            I am now in the job market and I&apos;m excited to work for and grow with a company
-            that shares the same mindset and values as I do.
+            I am now in the job market and I&apos;m excited to work for a company
+            where I can continue to learn and expand my knowledge.
           </p>
         </div>
         <div className='about-button-container'>
