@@ -20,10 +20,10 @@ export default function Projects(props) {
             <h4 className='nunito-800'>TECH</h4>
             <div className='tech-container'>
               <img src='assets/skills/react.svg'></img>
+              <img src='assets/skills/javascript.svg'></img>
               <img src='assets/skills/nodejs.svg'></img>
               <img src='assets/skills/express.svg'></img>
               <img src='assets/skills/postgresql.svg'></img>
-              <img src='assets/skills/javascript.svg'></img>
               <img src='assets/skills/html.svg'></img>
               <img src='assets/skills/css.svg'></img>
             </div>

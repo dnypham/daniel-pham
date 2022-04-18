@@ -30,6 +30,8 @@ export default function App() {
   const git = React.createRef();
   const figma = React.createRef();
   const slack = React.createRef();
+  const heroku = React.createRef();
+  const netlify = React.createRef();
   const projects = React.createRef();
   const event = React.createRef();
   const brew = React.createRef();
@@ -69,7 +71,9 @@ export default function App() {
     vscode: vscode,
     figma: figma,
     github: github,
-    slack: slack
+    slack: slack,
+    heroku: heroku,
+    netlify: netlify
   };
 
   const projectsSectionRefs = {
@@ -112,6 +116,8 @@ export default function App() {
     git,
     figma,
     slack,
+    heroku,
+    netlify,
     contactForm
   ];
 
